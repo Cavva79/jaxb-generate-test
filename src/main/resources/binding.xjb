@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<jaxb:bindings xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" version="2.1">
-	<jaxb:globalBindings localScoping="toplevel" underscoreBinding="asCharInWord">
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:simplify="http://jaxb2-commons.dev.java.net/basic/simplify"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc simplify" jaxb:version="2.1">
+	<jaxb:globalBindings localScoping="toplevel"
+		underscoreBinding="asCharInWord">
 	</jaxb:globalBindings>
 	<jaxb:bindings schemaLocation="test.xsd">
 		<jaxb:schemaBindings>
@@ -17,7 +20,9 @@
 			<jaxb:class name="Test2Impl" />
 		</jaxb:bindings>
 		<jaxb:bindings node="//xsd:element[@name='TEST3']">
-			<jaxb:property name="test3" />
+<!-- 			<simplify:property name="test3"> -->
+				<simplify:as-element-property />
+<!-- 			</simplify:property> -->
 		</jaxb:bindings>
 	</jaxb:bindings>
 </jaxb:bindings>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema targetNamespace="" elementFormDefault="qualified"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+<xsd:schema targetNamespace="http://targetNS" elementFormDefault="qualified"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:tns="http://targetNS">
 	<xsd:element name="TEST1">
 		<xsd:complexType mixed="true">
 			<xsd:sequence>
 				<xsd:element name="TEST2" maxOccurs="unbounded">
-					<xsd:complexType mixed="true">
+					<xsd:complexType mixed="true" >
 						<xsd:sequence>
 							<xsd:element name="TEST3" minOccurs="0" type="xsd:string" />
 						</xsd:sequence>
@@ -17,7 +17,7 @@
 	<xsd:element name="TEST">
 		<xsd:complexType mixed="true">
 			<xsd:sequence>
-				<xsd:element ref="TEST1" minOccurs="0" />
+				<xsd:element ref="tns:TEST1" minOccurs="0" />
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxb:bindings xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" version="2.1">
+	<jaxb:globalBindings localScoping="toplevel" underscoreBinding="asCharInWord">
+	</jaxb:globalBindings>
+	<jaxb:bindings schemaLocation="test.xsd">
+		<jaxb:schemaBindings>
+			<jaxb:package name="test.detail" />
+		</jaxb:schemaBindings>
+		<jaxb:bindings node="//xsd:element[@name='TEST']">
+			<jaxb:class name="Test"></jaxb:class>
+		</jaxb:bindings>
+		<jaxb:bindings node="//xsd:element[@name='TEST1']">
+			<jaxb:class name="Test1" />
+		</jaxb:bindings>
+		<jaxb:bindings node="//xsd:element[@name='TEST2']">
+			<jaxb:class name="Test2Impl" />
+		</jaxb:bindings>
+		<jaxb:bindings node="//xsd:element[@name='TEST3']">
+			<jaxb:property name="test3" />
+		</jaxb:bindings>
+	</jaxb:bindings>
+</jaxb:bindings>
